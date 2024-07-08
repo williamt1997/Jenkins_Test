@@ -11,8 +11,8 @@ pipeline {
 
         stage('Step 1: Performing Code Analysis Via SonarQube') {
             steps{
-                withSonarQubeEnv(installationName: 'sq1') {
-                  sh "sq1/bin/sonar-scanner"
+                withSonarQubeEnv(installationName: 'sonar') {
+                  sh "sonar/bin/sonar-scanner"
                 }
             }
         }
