@@ -31,7 +31,7 @@ func Connect() {
 	// Connect to postgres with gorm
 	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
 	if err != nil {
-		zap.L().Panic("Error loading .env file:", zap.Error(err))
+		zap.L().Panic("Error loading .env file!:", zap.Error(err))
 	} else {
 		DB = db
 	}
