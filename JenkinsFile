@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     
-    node {
+    stages {
         stage('SCM') {
             steps{
                 checkout scm
@@ -12,7 +12,7 @@ pipeline {
         stage('Step 1: Performing Code Analysis Via SonarQube') {
             steps{
                 withSonarQubeEnv(installationName: 'sq1') {
-                  sh "sq1/bin/sonar-scanner"
+                  sh './mnw clean sonar:sonar'
                 }
             }
         }
