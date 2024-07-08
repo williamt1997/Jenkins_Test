@@ -4,7 +4,9 @@ pipeline {
     
     stages {
         stage('SCM') {
-            checkout scm
+            steps{
+                checkout scm
+            }
         }
 
         stage('Step 1: Performing Code Analysis Via SonarQube') {
