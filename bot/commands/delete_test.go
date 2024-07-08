@@ -73,7 +73,7 @@ func TestDeleteBadInput(t *testing.T) {
 	msgWant := "Bot Name Does Not Exist"
 
 	if titleWant != title {
-		t.Errorf("\n\nError: Bot still trying to delete non existent bot\nWhat We Wanted: %q\nWhat We Got: %q", titleWant, title)
+		t.Errorf("\n\nError: Bot still trying to delete non existent bot!\nWhat We Wanted: %q\nWhat We Got: %q", titleWant, title)
 	}
 	if msgWant != msg {
 		t.Errorf("\n\nError: Bot still trying to delete non existent bot\nWhat We Wanted: %q\nWhat We Got: %q", msgWant, msg)
