@@ -47,7 +47,7 @@ func Start() {
 	// Start all of our shards and begin listening.
 	err = Mgr.Start()
 	if err != nil {
-		fmt.Println("[ERROR] Error starting manager,", err)
+		fmt.Println("[ERROR] Error starting manager!,", err)
 		return
 	}
 
