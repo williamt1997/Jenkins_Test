@@ -1,14 +1,19 @@
 pipeline {
     agent any
 
+    
     stages {
+        stage('SCM') {
+            checkout scm
+        }
+
         stage('Step 1: Performing Code Analysis Via SonarQube') {
-            steps {
-                withSonarQubeEnv(installationName: 'sq1') {
-                    sh 'mvn clean package sonar:sonar'
-                }
+            def scannerHome = tool 'SonarScanner';
+            withSonarQubeEnv() {
+              sh "${scannerHome}/bin/sonar-scanner"
             }
         }
+
         stage("Step 2: Validating Quality Of Code") {
             steps {
                 timeout(time: 1, unit: 'HOURS') {
